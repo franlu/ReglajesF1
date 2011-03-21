@@ -20,3 +20,28 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
+class Electre:
+	
+	def __init__ (self,alternativas, atributos):
+		self.alternativas = alternativas
+		self.atributos = atributos
+		
+	def establecerPesos(self, prioridad):
+		
+	def establecerOptimo(self, optimo):
+		
+	def establecerDecisional(self, decisional):
+		
+	def establecerNormalizada():
+		
+	def establecerPonderada():
+		
+	def establecerConcordada():
+		
+	def establecerDiscordada():
+		
+	def establecerDominada():
+		
+	def resolver(decisional, prioridad, optimo):
+		
+	def mostrar(double):
