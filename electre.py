@@ -20,7 +20,7 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
-from Math import sqrt
+from math import sqrt
 
 class Electre:
 	
@@ -85,7 +85,7 @@ class Electre:
 		
 		for i in range(0, self.alternativas):
 			for k in range(i+1, self.alternativas):
-				contador++
+				contador = contado + 1
 				suma = 0
 				for j in range(0, self.atributos):
 					if (((self.normalizada[i][j] >= self.ponderada[k][j]) and (self.optimo[j] == 1)) or ((self.ponderada[i][j] <= self.ponderada[k][j]) and (self.optimo[j]==0))):
@@ -123,11 +123,11 @@ class Electre:
 							maximo_actual =  maximo_actual * (-1.0)
 						if maximo_actual > maximo_global:
 							maximo_globlal = maximo_actual
-						if (((self.concordada[i][j] < self.concordada[k][j]) and (self.optimo[j] == 1) or ((self.ponderada[i][j] > self.ponderada[k][j]) and (self.optimo[j] == 0))):
+						if (((self.concordada[i][j] < self.concordada[k][j]) and (self.optimo[j] == 1)) or ((self.ponderada[i][j] > self.ponderada[k][j]) and (self.optimo[j] == 0))):
 							maximo_actual = self.concordada[i][j] - self.concordada[k][j]
 						if maximo_actual < 0:
 							maximo_actual = maximo_actual * (-1.0)
-						if maximo_actual > maximo
+						if maximo_actual > maximo:
 							maximo = maximo_actual
 				
 				self.discordada[i][k] = maximo / maximo_global
@@ -193,7 +193,7 @@ class Electre:
 					mejor = false
 				else:
 					reglaje = i
-				j++
+				j = j+1
 		return reglaje
 		
 	def mostrar(self, matriz):
