@@ -50,7 +50,7 @@ class Electre:
 		for i in range(0, self.atributos):
 			self.optimo[i] = optimo[i]
 					
-	def __establecerDecisional(self, decisional):
+	def establecerDecisional(self, decisional):
 		
 		for i in range(0, self.alternativas):
 			for j in range(0, self.atributos):
@@ -94,6 +94,32 @@ class Electre:
 		self.establecerConcordada()
 		self.establecerConcordada()
 		self.establecerDominada()
+		
+		print "DECISIONAL"
+		self.mostrar(self.decisional)
+		print "NORMALIZADA"
+		self.mostrar(self.normalizada)
+		print "PONDERADA"
+		self.mostrar(self.ponderada)
+		print "CONCORDADA"
+		self.mostrar(self.concordada)
+		print "DISCORDADA"
+		self.mostrar(self.discordada)
+		print "DOMINANCIA"
+		self.mostrar(self.dominancia)
+		
+		mejor = false
+		reglaje = 0
+		j=0
+		for i in range(0, self.alternativas):
+			mejor = true
+			while (j<self.atributos and mejor):
+				if self.dominancia[i][j] == 1.0:
+					mejor = false
+				else:
+					reglaje = i
+				j++
+		return reglaje
 		
 	def mostrar(self, matriz):
 		
