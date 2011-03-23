@@ -106,7 +106,44 @@ class Electre:
 					self.concordada[i][k] = 0
 	
 	def establecerDiscordada(self):
-		print ""
+		
+		for i in range(0, self.alternativas):
+			self.discordada[i][self.atributos - 1] = self.concordada[i][self.atributos-1]
+		
+		media = 0
+		
+		for i in range(0, self.alternativas):
+			for k in range(0, self.alternativas):
+				maximo = 0
+				maximo_globlal = 0
+				if i != k:
+					for j in range(0, self.atributos):
+						maximo_actual = self.concordada[i][j] - self.concordada[k][j]
+						if maximo_actual < 0:
+							maximo_actual =  maximo_actual * (-1.0)
+						if maximo_actual > maximo_global:
+							maximo_globlal = maximo_actual
+						if (((self.concordada[i][j] < self.concordada[k][j]) and (self.optimo[j] == 1) or ((self.ponderada[i][j] > self.ponderada[k][j]) and (self.optimo[j] == 0))):
+							maximo_actual = self.concordada[i][j] - self.concordada[k][j]
+						if maximo_actual < 0:
+							maximo_actual = maximo_actual * (-1.0)
+						if maximo_actual > maximo
+							maximo = maximo_actual
+				
+				self.discordada[i][k] = maximo / maximo_global
+				media = media + self.discordada[i][k]	
+		
+		media = media / ((self.alternativas * self.alternativas) - this.alternativas)
+		
+		for i in range(0, self.alternativas):
+			for k in range(0, self.alternativas):
+				if i != k:
+					if self.discordada[i][k] <= media:
+						self.discordada[i][k] = 1
+					else:
+						self.discordada[i][k] = 0
+				else:
+					self.discordada[i][k] = 0
 	
 	def establecerDominada(self):
 		
