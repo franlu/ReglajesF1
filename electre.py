@@ -76,7 +76,17 @@ class Electre:
 				self.ponderada[i][j] = self.normalizada[i][j] * self.pesos[j]
 				
 	def establecerConcordada(self):
-		print ""
+		
+		for i in range(0, self.alternativas):
+			self.concordada[i][self.atributos - 1] = self.ponderada[i][self.atributos-1]
+		
+		media = 0
+		contador = 0
+		
+		for i in range(0, self.alternativas):
+			for k in range(i+1, self.alternativas):
+				contador++
+				suma = 0
 	
 	def establecerDiscordada(self):
 		print ""
