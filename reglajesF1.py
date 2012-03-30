@@ -47,7 +47,7 @@ class Electre_GUI:
 		entry10 = self.builder.get_object("entry10")
 		
 				
-		datos = self.get_datos()
+		datos = self.get_datos(circuito)
 		
 		entry1.set_text(datos[d1])
 		entry2.set_text(datos[d2])
