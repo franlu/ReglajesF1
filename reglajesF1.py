@@ -20,6 +20,8 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
+import sqlite3
+
 from electre import Electre
 from gi.repository import Gtk
 
@@ -49,16 +51,16 @@ class Electre_GUI:
 				
 		datos = self.get_datos(circuito)
 		
-		entry1.set_text(datos[d1])
-		entry2.set_text(datos[d2])
-		entry3.set_text(datos[d3])
-		entry4.set_text(datos[d4])
-		entry5.set_text(datos[d5])
-		entry6.set_text(datos[d6])
-		entry7.set_text(datos[d7])
-		entry8.set_text(datos[d8])
-		entry9.set_text(datos[d9])
-		entry10.set_text(datos[d10])
+		entry1.set_text(datos['d1'])
+		entry2.set_text(datos['d2'])
+		entry3.set_text(datos['d3'])
+		entry4.set_text(datos['d4'])
+		entry5.set_text(datos['d5'])
+		entry6.set_text(datos['d6'])
+		entry7.set_text(datos['d7'])
+		entry8.set_text(datos['d8'])
+		entry9.set_text(datos['d9'])
+		entry10.set_text(datos['d10'])
 		
 		return True
 	
@@ -72,6 +74,10 @@ class Electre_GUI:
 		self.builder.connect_signals(self.handlers)
 		self.window = self.builder.get_object("reglajes")
 		self.window.show_all()
+		
+	def init_objects(self):
+		
+		return True
 		
 	def get_image(self, circuito):
 		
@@ -101,18 +107,23 @@ class Electre_GUI:
 		
 	def get_datos(self, circuito):
 		
-		#conectar con db
+		db = "speed_circuits.db"
+		connection=sqlite3.connect(db)
+		cursor=connection.cursor()
+		cursor.execute("select * from circuits where Nombre = '%s'" % circuito)
+		row = cursor.fetchall()
+		cursor.close()
 		
-		datos ={'d1': ,
-				 'd2': ,
-				 'd3': ,
-				 'd4': ,
-				 'd5': ,
-				 'd6': ,
-				 'd7': ,
-				 'd8': ,
-				 'd9': ,
-				 'd10': ,
+		datos ={'d1': str(row[0][1]) + ' Km',
+				 'd2': str(row[0][2]) + ' Vueltas',
+				 'd3': str(row[0][3]) + ' Seg',
+				 'd4': str(row[0][4]) + ' m',
+				 'd5': str(row[0][5]) + ' Km/h',
+				 'd6': str(row[0][11]) + '/' + str(row[0][6]) ,
+				 'd7': row[0][7],
+				 'd8': row[0][8],
+				 'd9': row[0][9],
+				 'd10': str(row[0][10]),
 				}
 				
 		return datos
