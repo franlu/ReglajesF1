@@ -964,19 +964,6 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkComboBox" id="combobox1">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="column_span_column">0</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">1</property>
-                                <property name="width">1</property>
-                                <property name="height">1</property>
-                              </packing>
-                            </child>
-                            <child>
                               <object class="GtkComboBox" id="combobox2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -1185,9 +1172,12 @@
                                 <property name="width_request">0</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1200,9 +1190,12 @@
                               <object class="GtkEntry" id="entry12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -1215,9 +1208,12 @@
                               <object class="GtkEntry" id="entry13">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -1230,9 +1226,12 @@
                               <object class="GtkEntry" id="entry14">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -1245,9 +1244,12 @@
                               <object class="GtkEntry" id="entry15">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">5</property>
@@ -1260,9 +1262,12 @@
                               <object class="GtkEntry" id="entry16">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">6</property>
@@ -1275,9 +1280,12 @@
                               <object class="GtkEntry" id="entry17">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">7</property>
@@ -1290,9 +1298,12 @@
                               <object class="GtkEntry" id="entry18">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
                                 <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">8</property>
@@ -1305,13 +1316,28 @@
                               <object class="GtkEntry" id="entry19">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
                                 <property name="max_length">3</property>
                                 <property name="invisible_char">•</property>
-                                <property name="width_chars">2</property>
+                                <property name="width_chars">3</property>
+                                <property name="placeholder_text">000</property>
                               </object>
                               <packing>
                                 <property name="left_attach">9</property>
                                 <property name="top_attach">3</property>
+                                <property name="width">1</property>
+                                <property name="height">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkComboBox" id="combobox1">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                              </object>
+                              <packing>
+                                <property name="left_attach">1</property>
+                                <property name="top_attach">1</property>
                                 <property name="width">1</property>
                                 <property name="height">1</property>
                               </packing>
