@@ -1,0 +1,6 @@
+
+# pyc files
+*.pyc
+
+# db
+circuitos.db
