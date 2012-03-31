@@ -2,6 +2,231 @@
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkAction" id="action1"/>
+  <object class="GtkAboutDialog" id="aboutdialog1">
+    <property name="can_focus">False</property>
+    <property name="border_width">5</property>
+    <property name="type_hint">dialog</property>
+    <property name="program_name">Reglajes F1</property>
+    <signal name="close" handler="onDeleteWindow" swapped="no"/>
+    <signal name="response" handler="onDeleteWindow" swapped="no"/>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="aboutdialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="aboutdialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="image21">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">start</property>
+            <property name="pixbuf">resources/about1.jpg</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label25">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Licencia:</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListStore" id="ground">
+    <columns>
+      <!-- column-name Ground -->
+      <column type="gint"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+      </row>
+      <row>
+        <col id="0">1</col>
+      </row>
+      <row>
+        <col id="0">2</col>
+      </row>
+      <row>
+        <col id="0">3</col>
+      </row>
+      <row>
+        <col id="0">4</col>
+      </row>
+      <row>
+        <col id="0">5</col>
+      </row>
+      <row>
+        <col id="0">6</col>
+      </row>
+      <row>
+        <col id="0">7</col>
+      </row>
+      <row>
+        <col id="0">8</col>
+      </row>
+      <row>
+        <col id="0">9</col>
+      </row>
+      <row>
+        <col id="0">10</col>
+      </row>
+      <row>
+        <col id="0">11</col>
+      </row>
+      <row>
+        <col id="0">12</col>
+      </row>
+      <row>
+        <col id="0">13</col>
+      </row>
+      <row>
+        <col id="0">14</col>
+      </row>
+      <row>
+        <col id="0">15</col>
+      </row>
+      <row>
+        <col id="0">16</col>
+      </row>
+      <row>
+        <col id="0">17</col>
+      </row>
+      <row>
+        <col id="0">18</col>
+      </row>
+      <row>
+        <col id="0">19</col>
+      </row>
+      <row>
+        <col id="0">20</col>
+      </row>
+      <row>
+        <col id="0">21</col>
+      </row>
+      <row>
+        <col id="0">22</col>
+      </row>
+      <row>
+        <col id="0">23</col>
+      </row>
+      <row>
+        <col id="0">24</col>
+      </row>
+      <row>
+        <col id="0">25</col>
+      </row>
+      <row>
+        <col id="0">26</col>
+      </row>
+      <row>
+        <col id="0">27</col>
+      </row>
+      <row>
+        <col id="0">28</col>
+      </row>
+      <row>
+        <col id="0">29</col>
+      </row>
+      <row>
+        <col id="0">30</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="height">
+    <columns>
+      <!-- column-name Value -->
+      <column type="gint"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+      </row>
+      <row>
+        <col id="0">1</col>
+      </row>
+      <row>
+        <col id="0">2</col>
+      </row>
+      <row>
+        <col id="0">3</col>
+      </row>
+      <row>
+        <col id="0">4</col>
+      </row>
+      <row>
+        <col id="0">5</col>
+      </row>
+      <row>
+        <col id="0">6</col>
+      </row>
+      <row>
+        <col id="0">7</col>
+      </row>
+      <row>
+        <col id="0">8</col>
+      </row>
+      <row>
+        <col id="0">9</col>
+      </row>
+      <row>
+        <col id="0">10</col>
+      </row>
+      <row>
+        <col id="0">11</col>
+      </row>
+      <row>
+        <col id="0">12</col>
+      </row>
+      <row>
+        <col id="0">13</col>
+      </row>
+      <row>
+        <col id="0">14</col>
+      </row>
+      <row>
+        <col id="0">15</col>
+      </row>
+      <row>
+        <col id="0">16</col>
+      </row>
+      <row>
+        <col id="0">17</col>
+      </row>
+      <row>
+        <col id="0">18</col>
+      </row>
+      <row>
+        <col id="0">19</col>
+      </row>
+      <row>
+        <col id="0">20</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkImage" id="image10">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -57,10 +282,15 @@
     <property name="can_focus">False</property>
     <property name="pixbuf">resources/alm2.gif</property>
   </object>
+  <object class="GtkImage" id="image20">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">resources/aut1.gif</property>
+  </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">resources/aut2.gif</property>
+    <property name="pixbuf">resources/my2.gif</property>
   </object>
   <object class="GtkImage" id="image4">
     <property name="visible">True</property>
@@ -70,7 +300,7 @@
   <object class="GtkImage" id="image5">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">resources/my2.gif</property>
+    <property name="pixbuf">resources/chn2.gif</property>
   </object>
   <object class="GtkImage" id="image6">
     <property name="visible">True</property>
@@ -91,6 +321,47 @@
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="pixbuf">resources/tur2.gif</property>
+  </object>
+  <object class="GtkListStore" id="priority">
+    <columns>
+      <!-- column-name Value -->
+      <column type="gint"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0">0</col>
+      </row>
+      <row>
+        <col id="0">1</col>
+      </row>
+      <row>
+        <col id="0">2</col>
+      </row>
+      <row>
+        <col id="0">3</col>
+      </row>
+      <row>
+        <col id="0">4</col>
+      </row>
+      <row>
+        <col id="0">5</col>
+      </row>
+      <row>
+        <col id="0">6</col>
+      </row>
+      <row>
+        <col id="0">7</col>
+      </row>
+      <row>
+        <col id="0">8</col>
+      </row>
+      <row>
+        <col id="0">9</col>
+      </row>
+      <row>
+        <col id="0">10</col>
+      </row>
+    </data>
   </object>
   <object class="GtkWindow" id="reglajes">
     <property name="can_focus">False</property>
@@ -153,11 +424,23 @@
                     <property name="can_focus">False</property>
                     <property name="ubuntu_local">True</property>
                     <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem20">
-                        <property name="label">Albert Park</property>
+                      <object class="GtkImageMenuItem" id="imagemenuitem33">
+                        <property name="label" translatable="yes">Albert Park</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
+                        <property name="image">image20</property>
+                        <property name="use_stock">False</property>
+                        <property name="always_show_image">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="imagemenuitem4">
+                        <property name="label" translatable="yes">Abu Dhabi</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="image">image19</property>
                         <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
                         <signal name="activate" handler="onCircuitActivate" swapped="no"/>
@@ -343,18 +626,6 @@
                         <signal name="activate" handler="onCircuitActivate" swapped="no"/>
                       </object>
                     </child>
-                    <child>
-                      <object class="GtkImageMenuItem" id="imagemenuitem4">
-                        <property name="label" translatable="yes">Abu Dhabi</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="image">image19</property>
-                        <property name="use_stock">False</property>
-                        <property name="always_show_image">True</property>
-                        <signal name="activate" handler="onCircuitActivate" swapped="no"/>
-                      </object>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -379,6 +650,7 @@
                         <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
+                        <signal name="activate" handler="onAboutDialog" swapped="no"/>
                       </object>
                     </child>
                   </object>
@@ -496,7 +768,7 @@
                                   <object class="GtkLabel" id="label3">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="label" translatable="yes">Distancia de Carrera</property>
+                                    <property name="label" translatable="yes">Distancia de carrera</property>
                                   </object>
                                   <packing>
                                     <property name="left_attach">0</property>
@@ -967,6 +1239,9 @@
                               <object class="GtkComboBox" id="combobox2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Altura (cm) deseada para el alerón trasero</property>
+                                <property name="model">height</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -979,6 +1254,11 @@
                               <object class="GtkComboBox" id="combobox3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Distribución del peso: 
+0   =  en la parte trasera
+10 =  en la parte delantera</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -991,6 +1271,12 @@
                               <object class="GtkComboBox" id="combobox4">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Rigidez de la suspensión:
+0 =  Blanda
+5 =  Intermedia
+10 =  Dura</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -1003,6 +1289,12 @@
                               <object class="GtkComboBox" id="combobox5">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Relación de cambios (Marchas):
+0 = Corta
+5 = Intermendia
+10 = Larga</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">5</property>
@@ -1015,6 +1307,9 @@
                               <object class="GtkComboBox" id="combobox6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Altura (cm) del vehículo contra el suelo.</property>
+                                <property name="model">ground</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">6</property>
@@ -1027,6 +1322,12 @@
                               <object class="GtkComboBox" id="combobox7">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Nivel de revoluciones del motor:
+0 =  Bajo
+5 =  Medio
+10 =  Alto</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">7</property>
@@ -1039,6 +1340,11 @@
                               <object class="GtkComboBox" id="combobox8">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Distribución de frenada:
+0 =  Delantera
+10 =  Trasera</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">8</property>
@@ -1051,6 +1357,11 @@
                               <object class="GtkComboBox" id="combobox9">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Camber de neumaticos:
+0 =  Negativo
+10 = Positivo</property>
+                                <property name="model">priority</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">9</property>
@@ -1063,6 +1374,8 @@
                               <object class="GtkComboBox" id="combobox10">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1075,6 +1388,8 @@
                               <object class="GtkComboBox" id="combobox11">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">2</property>
@@ -1087,6 +1402,8 @@
                               <object class="GtkComboBox" id="combobox12">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">3</property>
@@ -1099,6 +1416,8 @@
                               <object class="GtkComboBox" id="combobox13">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">4</property>
@@ -1111,6 +1430,8 @@
                               <object class="GtkComboBox" id="combobox14">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">5</property>
@@ -1123,6 +1444,8 @@
                               <object class="GtkComboBox" id="combobox15">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">6</property>
@@ -1135,6 +1458,8 @@
                               <object class="GtkComboBox" id="combobox16">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">7</property>
@@ -1147,6 +1472,8 @@
                               <object class="GtkComboBox" id="combobox17">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">8</property>
@@ -1159,6 +1486,8 @@
                               <object class="GtkComboBox" id="combobox18">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="model">priority</property>
+                                <property name="active">0</property>
                               </object>
                               <packing>
                                 <property name="left_attach">9</property>
@@ -1334,6 +1663,9 @@
                               <object class="GtkComboBox" id="combobox1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="tooltip_text" translatable="yes">Altura (cm) deseada para el alerón delantero</property>
+                                <property name="model">height</property>
+                                <property name="active">1</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
