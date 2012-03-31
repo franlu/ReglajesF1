@@ -7,8 +7,8 @@
     <property name="border_width">5</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">Reglajes F1</property>
-    <signal name="close" handler="onDeleteWindow" swapped="no"/>
-    <signal name="response" handler="onDeleteWindow" swapped="no"/>
+    <signal name="close" handler="onCloseAbout" swapped="no"/>
+    <signal name="response" handler="onCloseAbout" swapped="no"/>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutdialog-vbox1">
         <property name="can_focus">False</property>
@@ -285,7 +285,7 @@
   <object class="GtkImage" id="image20">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="pixbuf">resources/aut1.gif</property>
+    <property name="pixbuf">resources/aut2.gif</property>
   </object>
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
@@ -432,6 +432,7 @@
                         <property name="image">image20</property>
                         <property name="use_stock">False</property>
                         <property name="always_show_image">True</property>
+                        <signal name="activate" handler="onCircuitActivate" swapped="no"/>
                       </object>
                     </child>
                     <child>

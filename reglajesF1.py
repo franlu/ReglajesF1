@@ -82,6 +82,9 @@ class Electre_GUI:
 		self.about = self.builder.get_object("aboutdialog1")
 		self.about.show_all()
 		
+	def onCloseAbout(self, *args):
+		self.about = self.builder.get_object("aboutdialog1")
+		self.about.hide()
 		
 	
 	def __init__(self):
@@ -90,10 +93,11 @@ class Electre_GUI:
 		self.handlers = {"onDeleteWindow": Gtk.main_quit,
 						"onButtonPressed": self.onButtonPressed,
 						"onCircuitActivate": self.onCircuitActivate,
-						"onAboutDialog": self.onAboutDialog,}
+						"onAboutDialog": self.onAboutDialog,
+						"onCloseAbout": self.onCloseAbout,}
         
 		self.builder.connect_signals(self.handlers)
-		self.init_combobox()  
+		self.init_combobox()
 		self.window = self.builder.get_object("reglajes")
 		self.window.show_all()
 		
