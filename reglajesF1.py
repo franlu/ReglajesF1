@@ -209,7 +209,7 @@ class Electre_GUI:
 		images ={'Albert Park': 'resources/albert_park.jpg',
 				 'Sepang': "resources/sepang.jpg",
 				 'Shangai': 'resources/shangai.jpg',
-				 'Bahrein': 'resources/bahrein.jpg',
+				 'Bahrain': 'resources/bahrein.jpg',
 				 'Montmelo': 'resources/catalunya.jpg',
 				 'Monte Carlo': 'resources/monacocir.jpg',
 				 'Estambul Park': 'resources/estambul.jpg',

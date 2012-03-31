@@ -473,7 +473,7 @@
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem5">
-                        <property name="label" translatable="yes">Bahrein</property>
+                        <property name="label" translatable="yes">Bahrain</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
