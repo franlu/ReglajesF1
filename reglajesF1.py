@@ -28,8 +28,31 @@ from gi.repository import Gtk
 class Electre_GUI:
 	
 	def onButtonPressed(self,button):
-		print "Creando instancia para Electre"
-		Electre(8,8)
+		
+		ele = Electre(8,8)
+		priority = []
+		deseado = []
+		decisional = []
+		
+		for i in range(10,18):
+			combobox = self.builder.get_object("combobox%s" % i)
+			tree_iter = combobox.get_active_iter()
+			if tree_iter != None:
+				model = combobox.get_model()
+				value = model[tree_iter][0]
+				priority.append(value)
+				
+		for i in range(1,9):
+			combobox = self.builder.get_object("combobox%s" % i)
+			tree_iter = combobox.get_active_iter()
+			if tree_iter != None:
+				model = combobox.get_model()
+				value = model[tree_iter][0]
+				deseado.append(value)
+			
+		sol = ele.resolver(decisional,priority,deseado)
+		 
+		
 		datos ={'d1': str(row[0][1]) + ' Km',
 				 'd2': str(row[0][2]) + ' Vueltas',
 				 'd3': str(row[0][3]) + ' Seg',
