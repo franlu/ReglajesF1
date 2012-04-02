@@ -64,19 +64,16 @@ class Electre_GUI:
 		ele = Electre(len(row),9)
 		sol = ele.resolver(decisional,priority,deseado)
 		
-		print sol 
 		
-		datos ={'d1': str(row[0][1]) + ' Km',
-				 'd2': str(row[0][2]) + ' Vueltas',
-				 'd3': str(row[0][3]) + ' Seg',
-				 'd4': str(row[0][4]) + ' m',
-				 'd5': str(row[0][5]) + ' Km/h',
-				 'd6': str(row[0][1]) + '/' + str(row[0][6]) ,
-				 'd7': row[0][7],
-				 'd8': row[0][8],
-				 'd9': row[0][9],
-				 'd10': str(row[0][1]),
-				}
+		datos ={'d1': str(row[sol][0]),
+				 'd2': str(row[sol][1]),
+				 'd3': str(row[sol][2]),
+				 'd4': str(row[sol][3]),
+				 'd5': str(row[sol][4]),
+				 'd6': str(row[sol][5]),
+				 'd7': str(row[sol][6]),
+				 'd8': str(row[sol][7]),
+				 'd9': str(row[sol][8]),}
 		
 		self.populate_entry_optimo(datos)
 		
@@ -112,6 +109,18 @@ class Electre_GUI:
 		entry9.set_text(datos['d9'])
 		entry10.set_text(datos['d10'])
 		
+		datos ={'d1': str("000"),
+				 'd2': str("000"),
+				 'd3': str("000"),
+				 'd4': str("000"),
+				 'd5': str("000"),
+				 'd6': str("000"),
+				 'd7': str("000"),
+				 'd8': str("000"),
+				 'd9': str("000"),}
+		
+		self.populate_entry_optimo(datos)
+		
 		button1 = self.builder.get_object("button1")
 		button1.set_sensitive(True)
 		
@@ -146,79 +155,10 @@ class Electre_GUI:
 		
 		renderer_text = Gtk.CellRendererText()
 		
-		combobox1 = self.builder.get_object("combobox1")
-		combobox1.pack_start(renderer_text, True)
-		combobox1.add_attribute(renderer_text, "text", 0)
-		
-		combobox2 = self.builder.get_object("combobox2")
-		combobox2.pack_start(renderer_text, True)
-		combobox2.add_attribute(renderer_text, "text", 0)
-		
-		combobox3 = self.builder.get_object("combobox3")
-		combobox3.pack_start(renderer_text, True)
-		combobox3.add_attribute(renderer_text, "text", 0)
-		
-		combobox4 = self.builder.get_object("combobox4")
-		combobox4.pack_start(renderer_text, True)
-		combobox4.add_attribute(renderer_text, "text", 0)
-		
-		combobox5 = self.builder.get_object("combobox5")
-		combobox5.pack_start(renderer_text, True)
-		combobox5.add_attribute(renderer_text, "text", 0)
-		
-		combobox6 = self.builder.get_object("combobox6")
-		combobox6.pack_start(renderer_text, True)
-		combobox6.add_attribute(renderer_text, "text", 0)
-		
-		combobox7 = self.builder.get_object("combobox7")
-		combobox7.pack_start(renderer_text, True)
-		combobox7.add_attribute(renderer_text, "text", 0)
-		
-		combobox8 = self.builder.get_object("combobox8")
-		combobox8.pack_start(renderer_text, True)
-		combobox8.add_attribute(renderer_text, "text", 0)
-		
-		combobox9 = self.builder.get_object("combobox9")
-		combobox9.pack_start(renderer_text, True)
-		combobox9.add_attribute(renderer_text, "text", 0)
-		
-		combobox10 = self.builder.get_object("combobox10")
-		combobox10.pack_start(renderer_text, True)
-		combobox10.add_attribute(renderer_text, "text", 0)
-		
-		
-		
-		combobox11 = self.builder.get_object("combobox11")
-		combobox11.pack_start(renderer_text, True)
-		combobox11.add_attribute(renderer_text, "text", 0)
-		
-		combobox12 = self.builder.get_object("combobox12")
-		combobox12.pack_start(renderer_text, True)
-		combobox12.add_attribute(renderer_text, "text", 0)
-		
-		combobox13 = self.builder.get_object("combobox13")
-		combobox13.pack_start(renderer_text, True)
-		combobox13.add_attribute(renderer_text, "text", 0)
-		
-		combobox14 = self.builder.get_object("combobox14")
-		combobox14.pack_start(renderer_text, True)
-		combobox14.add_attribute(renderer_text, "text", 0)
-		
-		combobox15 = self.builder.get_object("combobox15")
-		combobox15.pack_start(renderer_text, True)
-		combobox15.add_attribute(renderer_text, "text", 0)
-		
-		combobox16 = self.builder.get_object("combobox16")
-		combobox16.pack_start(renderer_text, True)
-		combobox16.add_attribute(renderer_text, "text", 0)
-		
-		combobox17 = self.builder.get_object("combobox17")
-		combobox17.pack_start(renderer_text, True)
-		combobox17.add_attribute(renderer_text, "text", 0)
-		
-		combobox18 = self.builder.get_object("combobox18")
-		combobox18.pack_start(renderer_text, True)
-		combobox18.add_attribute(renderer_text, "text", 0)
+		for i in range(1,19):
+			combobox = self.builder.get_object("combobox%s" % i)
+			combobox.pack_start(renderer_text, True)
+			combobox.add_attribute(renderer_text, "text", 0)
 		
 		return True
 

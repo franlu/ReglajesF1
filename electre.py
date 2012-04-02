@@ -29,7 +29,7 @@ class Electre:
 		self.atributos = atributos
 		self.pesos = [0] * atributos
 		self.optimo = [0] * atributos
-		self.decisional = [[0] * atributos] * alternativas
+		self.decisional = [] #[[0] * atributos] * alternativas
 		self.normalizada = [[0] * atributos] * alternativas
 		self.ponderada = [[0] * atributos] * alternativas
 		self.concordada = [[0] * atributos] * alternativas
@@ -52,10 +52,9 @@ class Electre:
 					
 	def establecerDecisional(self, decisional):
 		
-		for i in range(0, self.alternativas):
-			for j in range(0, self.atributos):
-				self.decisional[i][j] = decisional[i][j]		
-	
+		for d in decisional:
+			self.decisional.append(d)
+
 	def establecerNormalizada(self):
 		
 		for j in range(0, self.atributos):
@@ -183,14 +182,14 @@ class Electre:
 		print "DOMINANCIA"
 		self.mostrar(self.dominancia)
 		
-		mejor = false
+		mejor = False
 		reglaje = 0
 		j=0
 		for i in range(0, self.alternativas):
-			mejor = true
+			mejor = True
 			while (j<self.atributos and mejor):
 				if self.dominancia[i][j] == 1.0:
-					mejor = false
+					mejor = False
 				else:
 					reglaje = i
 				j = j+1
