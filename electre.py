@@ -85,7 +85,7 @@ class Electre:
 		
 		for i in range(0, self.alternativas):
 			for k in range(i+1, self.alternativas):
-				contador = contado + 1
+				contador = contador + 1
 				suma = 0
 				for j in range(0, self.atributos):
 					if (((self.normalizada[i][j] >= self.ponderada[k][j]) and (self.optimo[j] == 1)) or ((self.ponderada[i][j] <= self.ponderada[k][j]) and (self.optimo[j]==0))):
@@ -152,12 +152,12 @@ class Electre:
 				self.dominancia[i][j] = 0
 		
 		for i in range(0, self.alternativas):
-			self.dominancia[i][this.alternativas - 1] = self.concordada[i][this.alternativas - 1]
+			self.dominancia[i][self.alternativas - 1] = self.concordada[i][self.alternativas - 1]
 		
 		for i in range(0, self.alternativas):
 			for j in range(0, self.alternativas):
-				if self.concordada[i][j] == this.discordada[i][j]:
-					self.dominancia[i][j] = this.concordada[i][j]
+				if self.concordada[i][j] == self.discordada[i][j]:
+					self.dominancia[i][j] = self.concordada[i][j]
 	
 	def resolver(self, decisional, prioridad, optimo):
 		

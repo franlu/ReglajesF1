@@ -29,12 +29,11 @@ class Electre_GUI:
 	
 	def onButtonPressed(self,button):
 		
-		ele = Electre(8,8)
 		priority = []
 		deseado = []
 		decisional = []
 		
-		for i in range(10,18):
+		for i in range(10,19):
 			combobox = self.builder.get_object("combobox%s" % i)
 			tree_iter = combobox.get_active_iter()
 			if tree_iter != None:
@@ -42,27 +41,41 @@ class Electre_GUI:
 				value = model[tree_iter][0]
 				priority.append(value)
 				
-		for i in range(1,9):
+		for i in range(1,10):
 			combobox = self.builder.get_object("combobox%s" % i)
 			tree_iter = combobox.get_active_iter()
 			if tree_iter != None:
 				model = combobox.get_model()
 				value = model[tree_iter][0]
 				deseado.append(value)
+				
+		db = "speed_circuits.db"
+		connection=sqlite3.connect(db)
+		cursor=connection.cursor()
+		cursor.execute("select AleronD, AleronT, Peso, Suspension, Cambios, \
+		                Suelo, Revoluciones, Frenos, Camber from results \
+		                where ID_circuit = '%s'" % self.get_id_circuito())
+		row = cursor.fetchall()
+		for r in row:
+			decisional.append(r)
 			
+		cursor.close()
+		
+		ele = Electre(len(row),9)
 		sol = ele.resolver(decisional,priority,deseado)
-		 
+		
+		print sol 
 		
 		datos ={'d1': str(row[0][1]) + ' Km',
 				 'd2': str(row[0][2]) + ' Vueltas',
 				 'd3': str(row[0][3]) + ' Seg',
 				 'd4': str(row[0][4]) + ' m',
 				 'd5': str(row[0][5]) + ' Km/h',
-				 'd6': str(row[0][11]) + '/' + str(row[0][6]) ,
+				 'd6': str(row[0][1]) + '/' + str(row[0][6]) ,
 				 'd7': row[0][7],
 				 'd8': row[0][8],
 				 'd9': row[0][9],
-				 'd10': str(row[0][10]),
+				 'd10': str(row[0][1]),
 				}
 		
 		self.populate_entry_optimo(datos)
@@ -70,9 +83,9 @@ class Electre_GUI:
     
 	def onCircuitActivate(self, menuitem):
 				
-		circuito = menuitem.get_label()
+		self.circuito = menuitem.get_label()
 		image = self.builder.get_object("image1")
-		image.set_from_file(self.get_image(circuito))
+		image.set_from_file(self.get_image(self.circuito))
 				
 		entry1 = self.builder.get_object("entry1")
 		entry2 = self.builder.get_object("entry2")
@@ -86,7 +99,7 @@ class Electre_GUI:
 		entry10 = self.builder.get_object("entry10")
 		
 				
-		datos = self.get_datos(circuito)
+		datos = self.get_datos(self.circuito)
 		
 		entry1.set_text(datos['d1'])
 		entry2.set_text(datos['d2'])
@@ -98,6 +111,9 @@ class Electre_GUI:
 		entry8.set_text(datos['d8'])
 		entry9.set_text(datos['d9'])
 		entry10.set_text(datos['d10'])
+		
+		button1 = self.builder.get_object("button1")
+		button1.set_sensitive(True)
 		
 		return True
 		
@@ -121,6 +137,8 @@ class Electre_GUI:
         
 		self.builder.connect_signals(self.handlers)
 		self.init_combobox()
+		button1 = self.builder.get_object("button1")
+		button1.set_sensitive(False)
 		self.window = self.builder.get_object("reglajes")
 		self.window.show_all()
 		
@@ -276,7 +294,26 @@ class Electre_GUI:
 				
 		return datos
 
-	
+	def get_id_circuito(self):
+		id_circuito = {'Albert Park': 1,
+						'Sepang': 2,
+						'Shangai': 3,
+						'Bahrain': 4,
+						'Montmelo': 5,
+						'Monte Carlo': 6,
+						'Estambul Park': 7,
+						'Silverstone': 8,
+						'Nurburgring': 9,
+						'Hungaroring': 10,
+						'Valencia': 11,
+						'Spa': 12,
+						'Monza': 13,
+						'Marina Bay': 14,
+						'Suzuka': 15,
+						'Interlagos': 16,
+						'Abu Dhabi': 17,}
+		
+		return id_circuito[self.circuito]
 
 def main():
 	window = Electre_GUI()
