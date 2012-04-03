@@ -540,7 +540,7 @@ MA 02110-1301, USA.</property>
                     </child>
                     <child>
                       <object class="GtkImageMenuItem" id="imagemenuitem11">
-                        <property name="label" translatable="yes">Nurburgring</property>
+                        <property name="label" translatable="yes">Hockenheim</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="use_action_appearance">False</property>
