@@ -16,21 +16,21 @@ one of the basic configurations that have team leaders.
 
 The factors that have to decide one or the other settings are:
 
-Tire Camber
+* Tire Camber
 
-Height of fins.
+* Height of fins.
 
-Weight distribution.
+* Weight distribution.
 
-Suspension stiffness.
+* Suspension stiffness.
 
-Ratio (Marches).
+* Ratio (Marches).
 
-Vehicle height to the ground.
+* Vehicle height to the ground.
 
-Engine speed level.
+* Engine speed level.
 
-Braking distribution.
+* Braking distribution.
 
 
 For each circuit these factors have a greater or lesser influence on the
@@ -40,6 +40,3 @@ results that would set the car on the track.
 Therefore this problem is considered multi-rate, since we must choose 
 the best option depending on more than one criterion, which can be 
 resolved through ELECTRE method.
-
-
-=============================================================================
